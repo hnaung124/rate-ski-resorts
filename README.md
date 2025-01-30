@@ -1,0 +1,1 @@
+# rate-ski-resorts

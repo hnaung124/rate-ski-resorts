@@ -12,16 +12,33 @@ export const getResorts = async (req,res) =>{
     }
 }
 
-export const createResort = async (req,res) =>{
-    try{
-        const resorts = await Resort.find({});
-        res.status(200).json({success: true, data: resorts});
+export const createResort = async (req, res) => {
+    try {
+        const { name, rating, image } = req.body;
+
+        // Validate the input
+        if (!name || !rating || !image) {
+            return res.status(400).json({ success: false, message: "All fields are required" });
+        }
+
+        // Create a new resort using the model
+        const newResort = new Resort({
+            name,
+            rating,
+            image,
+        });
+
+        // Save the resort to the database
+        await newResort.save();
+
+        // Return the newly created resort
+        res.status(201).json({ success: true, data: newResort });
+    } catch (error) {
+        console.log("error in creating resort:", error.message);
+        res.status(500).json({ success: false, message: "Server error" });
     }
-    catch(error){
-        console.log("error in fetching resorts:", error.message);
-        res.status(500).json({success: false, message: "Server error"});
-    }
-}
+};
+
 
 export const updateResort = async (req,res) => {
     const {id} = req.params;

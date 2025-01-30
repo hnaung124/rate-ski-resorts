@@ -5,7 +5,7 @@ const resortSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    price: {
+    rating: {
         type: Number,
         required: true
     },

@@ -2,7 +2,7 @@
   "name": "ski-resorts-app",
   "version": "1.0.0",
   "main": "index.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
     "dev": "nodemon backend/server.js"
   },
@@ -17,5 +17,13 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hnaung124/rate-ski-resorts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hnaung124/rate-ski-resorts/issues"
+  },
+  "homepage": "https://github.com/hnaung124/rate-ski-resorts#readme"
 }
